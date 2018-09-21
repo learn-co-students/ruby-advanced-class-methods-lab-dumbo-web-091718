@@ -44,13 +44,18 @@ class Song
     @@all.sort_by { |song| song.name }
   end
 
-  def self.new_from_filename(filename)
+  # Helper method.
+  def parse(filename)
     components = filename.split(' - ') 
     artist = components[0]
     song_name = components[1].sub(/\.mp3\b/, '')
+    [song_name, artist]
+  end
 
-    song = Song.create_by_name(song_name)
-    song.artist_name = artist
+  def self.new_from_filename(filename)
+    parsed_file = parse(filename)
+    song = Song.create_by_name(parsed_file[0])
+    song.artist_name = parsed_file[1]
     song
   end
 
