@@ -55,10 +55,11 @@ describe "Song Class Methods" do
 
       expect(song_1).to eq(song_2)
     end
-    
+
     it 'creates a new Song object with the provided title if one doesn\'t already exist' do
+      Song.destroy_all
       blank_space = Song.find_by_name("Blank Space")
-      expect(blank_space).to be(nil)
+      expect(blank_space).to eq(nil)
 
       blank_space = Song.find_or_create_by_name("Blank Space")
       expect(blank_space.name).to eq("Blank Space")
@@ -67,6 +68,7 @@ describe "Song Class Methods" do
 
   describe '.alphabetical' do
     it 'returns all the song instances in alphabetical order by song name' do
+      Song.destroy_all
       song_1 = Song.create_by_name("Thriller")
       song_2 = Song.create_by_name("Blank Space")
       song_3 = Song.create_by_name("Call Me Maybe")
