@@ -53,9 +53,9 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    parsed_file = self.parse(filename)
-    song = Song.create_by_name(parsed_file[0])
-    song.artist_name = parsed_file[1]
+    song_name, song_artist = parse(filename)
+    song = Song.create_by_name(song_name)
+    song.artist_name = song_artist
     song
   end
 
