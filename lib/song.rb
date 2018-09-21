@@ -45,7 +45,7 @@ class Song
   end
 
   # Helper method.
-  def parse(filename)
+  def self.parse(filename)
     components = filename.split(' - ') 
     artist = components[0]
     song_name = components[1].sub(/\.mp3\b/, '')
@@ -53,7 +53,7 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    parsed_file = parse(filename)
+    parsed_file = self.parse(filename)
     song = Song.create_by_name(parsed_file[0])
     song.artist_name = parsed_file[1]
     song
