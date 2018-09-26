@@ -70,7 +70,7 @@ def self.new_from_filename(file_name)
   # binding.pry  #file_name.split(/\s|\ -1./)
   a = file_name.split(/\s|\./)
   nu_artist_name = a[-6].join('')
-  nu_song_name = song = a[2..5].join(' ')
+  nu_song_name = a[2..5].join(' ')
           # a = "Thundercat - For Love I Come.mp3".split(/\s|\ ,./) #.uniq.split(".")
           # b = a = "Thundercat - For Love I Come.mp3".split(/\s|\ -1./)
           # c = b[-1]
