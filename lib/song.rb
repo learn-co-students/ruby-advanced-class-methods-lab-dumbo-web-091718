@@ -53,19 +53,23 @@ def self.find_or_create_by_name(name)
     self.find_by_name(name) || self.create_by_name(name)
 end
  # can also be @@all.find do |song_name|if !song_name nil else song_name.name == name...
-
-def self.alphabetical(name)
-
-    def my_meth(name, revers_alpha)
-      if revers_alpha = false
-         name.sort do |a,b| a <=> b
-      else
-         name.sort { |a,b| b <=> a
-      end
-    end
-    my_meth(@@all)
-
+ def my_meth(x, revers_alpha=false)
+   if revers_alpha == false
+      x.sort {|a,b| a <=> b}
+   else
+      x.sort {|a,b| b <=> a}
+   end
 end
 
+def self.alphabetical
+   self.all.sort_by {|a| a.name[0]}
+end
+
+
+def self.new_from_filename
+  song = self.new_by_name(name)
+  song.artist_name = artist
+
+end
 # binding.pry
 end
