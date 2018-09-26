@@ -67,9 +67,10 @@ end
 
 
 def self.new_from_filename(file_name)
-  spltd_file = file_name.split.uniq
-  nu_artist_name = nu_artist_name[0]
-  binding.pry
+  # binding.pry
+  splt_file = file_name.split(/\s|\./)
+  nu_artist_name = splt[-1]
+
          nu_song_name = song_arr[1].split(".mp3").join("")
          nu_song = Song.new
 
@@ -77,7 +78,7 @@ def self.new_from_filename(file_name)
   new_song.artist_name = artist #
 
 end
-
+   binding.pry
 def self.destroy_all
   self.all.clear
 end
