@@ -68,17 +68,16 @@ end
 
 def self.new_from_filename(file_name)
   # binding.pry
-  splt_file = file_name.split(/\s|\./)
-  nu_artist_name = splt[-1]
-
-         nu_song_name = song_arr[1].split(".mp3").join("")
+  splt = file_name.split(/\s|\./)
+  nu_artist_name = (splt[-1] += splt[-2]
+  nu_song_name = song_arr[1].split(".mp3").join("")
          nu_song = Song.new
 
   new_song = self.new_by_name(name) #create_by_name
   new_song.artist_name = artist #
 
 end
-   binding.pry
+   # binding.pry
 def self.destroy_all
   self.all.clear
 end
