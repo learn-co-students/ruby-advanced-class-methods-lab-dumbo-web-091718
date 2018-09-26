@@ -67,14 +67,21 @@ end
 
 
 def self.new_from_filename(file_name)
-  # binding.pry
-  splt = file_name.split(/\s|\./)
-  nu_artist_name = (splt[-1] += splt[-2]
-  nu_song_name = song_arr[1].split(".mp3").join("")
-         nu_song = Song.new
-
-  new_song = self.new_by_name(name) #create_by_name
-  new_song.artist_name = artist #
+  # binding.pry  #file_name.split(/\s|\ -1./)
+  a = file_name.split(/\s|\./)
+  nu_artist_name = a[-6].join('')
+  nu_song_name = song = a[2..5].join(' ')
+          # a = "Thundercat - For Love I Come.mp3".split(/\s|\ ,./) #.uniq.split(".")
+          # b = a = "Thundercat - For Love I Come.mp3".split(/\s|\ -1./)
+          # c = b[-1]
+          # puts d = c.split('')
+          # p a
+          # p d.join(3..-1)
+          #  name = a[-1].chomp("3")
+          #  p name
+         # nu_song = Song.new
+  nu_song = self.new_by_name(nu_song_name) #create_by_name
+  nu_song.artist_name = nu_artist #
 
 end
    # binding.pry
