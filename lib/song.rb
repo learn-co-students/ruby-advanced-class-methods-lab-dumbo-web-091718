@@ -73,20 +73,20 @@ class Song
 
     nu_artist_name = a[-6]
     nu_song_name = a[2..5].join(' ')
-            # a = file_name.split(/\s|\ ,./) #.uniq.split(".")
-            # b = a = file_name.split(/\s|\ -1./)
-            # c = b[-1]
-            # puts d = c.split('')
-            # p a
-            # p d.join(3..-1)
-            #  name = a[-1].chomp("3")
-            #  p name
-            # a.pop
-            # p a
-            # 5.times do a.shift end
-            # p a.join
-            # nu_artist_name = a[-6]
-            # nu_song_name = a[2..5].join(' ')
+            a = file_name.split(/\s|\ ,./) #.uniq.split(".")
+            b = a = file_name.split(/\s|\ -1./)
+            c = b[-1]
+            puts d = c.split('')
+            p a
+            p d.join(3..-1)
+             name = a[-1].chomp("3")
+             p name
+            a.pop
+            p a
+            5.times do a.shift end
+            p a.join
+            nu_artist_name = a[-6]
+            nu_song_name = a[2..5].join(' ')
             nu_song = Song.new # Not Needed
     nu_song = self.new_by_name(nu_song_name)#create with new name pass newly made name
     nu_song.artist_name = nu_artist_name # Same here for artist
