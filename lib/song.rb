@@ -71,5 +71,9 @@ def self.new_from_filename
   song.artist_name = artist
 
 end
+
+def self.destroy_all
+  self.all.clear
+end
 # binding.pry
 end
