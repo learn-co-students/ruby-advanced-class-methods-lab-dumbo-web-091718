@@ -98,10 +98,10 @@ class Song
   def self.create_from_filename(file_name)
     file = file_name.split(/\s|\./)
     file.pop
-    nu_artist_in_town = a[-6]
-    nu_song_name = a[2..5].join(' ')
-    nu_song.name = self.create_by_name(nu_song_name)
-    nu_song.nu_artist_name = nu_artist_in_town
+    nu_artist_in_town = file[-6]
+    nu_song_name = file[2..5].join(' ')
+    nu_song = self.create_by_name(nu_song_name)
+    nu_song.artist_name = nu_artist_in_town
     nu_song
   end
 
