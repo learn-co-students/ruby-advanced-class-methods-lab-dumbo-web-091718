@@ -100,11 +100,9 @@ class Song
     file.pop
     nu_artist_in_town = a[-6]
     nu_song_name = a[2..5].join(' ')
-    nu_song.name = self.create_by_name
+    nu_song.name = self.create_by_name(nu_song_name)
     nu_song.nu_artist_name = nu_artist_in_town
     nu_song
-
-
   end
 
   def self.destroy_all
