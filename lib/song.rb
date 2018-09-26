@@ -54,6 +54,18 @@ def self.find_or_create_by_name(name)
 end
  # can also be @@all.find do |song_name|if !song_name nil else song_name.name == name...
 
+def self.alphabetical(name)
+
+    def my_meth(name, revers_alpha)
+      if revers_alpha = false
+         name.sort do |a,b| a <=> b
+      else
+         name.sort { |a,b| b <=> a
+      end
+    end
+    my_meth(@@all)
+
+end
 
 # binding.pry
 end
