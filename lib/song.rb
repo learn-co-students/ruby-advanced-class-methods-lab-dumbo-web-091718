@@ -66,9 +66,15 @@ def self.alphabetical
 end
 
 
-def self.new_from_filename
-  song = self.new_by_name(name)
-  song.artist_name = artist
+def self.new_from_filename(file_name)
+  spltd_file = file_name.split.uniq
+  nu_artist_name = nu_artist_name[0]
+  binding.pry
+         nu_song_name = song_arr[1].split(".mp3").join("")
+         nu_song = Song.new
+
+  new_song = self.new_by_name(name) #create_by_name
+  new_song.artist_name = artist #
 
 end
 
