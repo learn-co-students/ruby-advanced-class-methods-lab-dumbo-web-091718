@@ -46,44 +46,52 @@ class Song
        song_name.name == name
        # else nil
    # end
-  end
-end
-
-def self.find_or_create_by_name(name)
-    self.find_by_name(name) || self.create_by_name(name)
-end
- # can also be @@all.find do |song_name|if !song_name nil else song_name.name == name...
- def my_meth(x, revers_alpha=false)
-   if revers_alpha == false
-      x.sort {|a,b| a <=> b}
-   else
-      x.sort {|a,b| b <=> a}
    end
-end
+  end
 
-def self.alphabetical
-   self.all.sort_by {|a| a.name[0]}
-end
+  def self.find_or_create_by_name(name)
+      self.find_by_name(name) || self.create_by_name(name)
+  end
+   # can also be @@all.find do |song_name|if !song_name nil else song_name.name == name...
+   def my_meth(x, revers_alpha=false)
+     if revers_alpha == false
+        x.sort {|a,b| a <=> b}
+     else
+        x.sort {|a,b| b <=> a}
+     end
+  end
+
+  def self.alphabetical
+     self.all.sort_by {|a| a.name[0]}
+  end
 
 
-def self.new_from_filename(file_name)
-  # binding.pry  #file_name.split(/\s|\ -1./)
-  a = file_name.split(/\s|\./)
-  nu_artist_name = a[-6].join('')
-  nu_song_name = a[2..5].join(' ')
-          # a = "Thundercat - For Love I Come.mp3".split(/\s|\ ,./) #.uniq.split(".")
-          # b = a = "Thundercat - For Love I Come.mp3".split(/\s|\ -1./)
-          # c = b[-1]
-          # puts d = c.split('')
-          # p a
-          # p d.join(3..-1)
-          #  name = a[-1].chomp("3")
-          #  p name
-         # nu_song = Song.new
-  nu_song = self.new_by_name(nu_song_name) #create_by_name
-  nu_song.artist_name = nu_artist #
+  def self.new_from_filename(file_name)
+    # binding.pry  #file_name.split(/\s|\ -1./)
+    a = file_name.split(/\s|\./)
+    a.pop
 
-end
+    nu_artist_name = a[-6]
+    nu_song_name = a[2..5].join(' ')
+            a = "Thundercat - For Love I Come.mp3".split(/\s|\ ,./) #.uniq.split(".")
+            b = a = file_name.split(/\s|\ -1./)
+            c = b[-1]
+            puts d = c.split('')
+            p a
+            p d.join(3..-1)
+             name = a[-1].chomp("3")
+             p name
+            a.pop
+            p a
+            5.times do a.shift end
+            p a.join
+            nu_artist_name = a[-6]
+            nu_song_name = a[2..5].join(' ')
+            nu_song = Song.new # Not Needed
+    nu_song = self.new_by_name(nu_song_name)#create with new name pass newly made name
+    nu_song.artist_name = nu_artist_name # Same here for artist
+    nu_song
+  end
    # binding.pry
 def self.destroy_all
   self.all.clear
